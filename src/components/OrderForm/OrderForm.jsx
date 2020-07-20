@@ -58,14 +58,14 @@ const renderPassengers = ({fields}) => (
                     
                 </Header>
                 <Form.Group widths='equal'>
-                    <Field component={ renderInput } name={`${passenger}.lastName`} label='Фамилия' validate={[ required, maxLength15 ]} />
-                    <Field component={ renderInput } name={`${passenger}.firstName`} label='Имя' validate={[ required, maxLength15 ]} />
-                    <Field component={ renderInput } label='Отчество (обязательно, при наличии)' name={`${passenger}.patronymic`} validate={[ required, maxLength15 ]} />
+                    <Field component={ renderInput } name={`${passenger}.lastName`} label='Фамилия *' validate={[ required, maxLength15 ]} />
+                    <Field component={ renderInput } name={`${passenger}.firstName`} label='Имя *' validate={[ required, maxLength15 ]} />
+                    <Field component={ renderInput } label='Отчество (обязательно, при наличии) *' name={`${passenger}.patronymic`} validate={[ required, maxLength15 ]} />
                 </Form.Group>
                 <Form.Group widths='equal'>
                     <Field
                         component={renderSelect}
-                        label='Пол'
+                        label='Пол *'
                         options={[
                             { key: 'm', text: 'Мужчина', value: 'male' },
                             { key: 'f', text: 'Женщина', value: 'female' }
@@ -73,10 +73,10 @@ const renderPassengers = ({fields}) => (
                         name={`${passenger}.sex`}
                         validate={[required]}
                     />
-                    <Field component={renderInput} label='Дата рождения(ДД/ММ/ГГГГ)' name={`${passenger}.birthDate`} validate={[required, date]}/>
+                    <Field component={renderInput} label='Дата рождения(ДД/ММ/ГГГГ) *' name={`${passenger}.birthDate`} validate={[required, date]}/>
                     <Field 
                         component={renderSelect} 
-                        label='Гражданство' 
+                        label='Гражданство *' 
                         options={[
                             { key: 'ru', text: 'Россия', value: 'russia' },
                             { key: 'by', text: 'Беларусь', value: 'belarus' },
@@ -90,7 +90,7 @@ const renderPassengers = ({fields}) => (
                 <Form.Group widths='equal'>
                     <Field 
                         component={renderSelect} 
-                        label='Тип документа' 
+                        label='Тип документа *' 
                         options={[
                             { key: 'pasp', text: 'Паспорт', value: 'pasport' },
                             { key: 'zagr_pasp', text: 'Заграничный паспорт', value: 'zagr_pasp' },
@@ -99,8 +99,8 @@ const renderPassengers = ({fields}) => (
                         name={`${passenger}.docType`}
                         validate={[required]}
                     />
-                    <Field component={ renderInput } label='Номер документа' name={`${passenger}.docNumber`} validate={[required, maxLength15, number]}/>
-                    <Field component={ Form.Input } label='Тариф' name={`${passenger}.rate`} disabled />
+                    <Field component={ renderInput } label='Номер документа *' name={`${passenger}.docNumber`} validate={[required, maxLength15, number]}/>
+                    <Field component={ Form.Input } label='Тариф *' name={`${passenger}.rate`} disabled />
                 </Form.Group>
                     <Field
                         component={renderCheckbox} 
